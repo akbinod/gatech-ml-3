@@ -1,17 +1,12 @@
 <h2>Georgia Tech : CS-7641 - Machine Learning : Spring 2020 </h1>
-<h2>Assignment 2 - Randomized Optimization</h3>
+<h2>Assignment 3 - Clustering and Dimensionality Reduction</h3>
 
 <h3>Running the code</h3>
 <p>
-Running main.py will run the analysis that forms the bulk of this assignment. Output consists of plots (pasted into the report) and run stats which have been put into macOS .numbers files - one for each of the problems solved.
+Running main.py will run the analysis that forms the bulk of this assignment. Output consists of plots (pasted into the report) and run stats.
 
 
-Everything is kicked off from main.py. Please change the function called at the bottom of the file. You can choose to run one of 3 main problems, or run the ANN (part 2 of the assignment)
-
-As last checked in, running that file will run the code for Part 2 of the assignment. Since the RHC and GA portions of that take so long to run, the code in IrisANN.benchmark() has been commented in part to just run the benchmarking of SA as a sub for back propagation. To run the entire code, please uncomment the appropriate lines in the benchmark() function.
-
-To run the benchmarking in Part 1, please uncomment the solution you want to run in main(), e,g., uncomment SolveQueens(False).
-To run hyper parameter tuning for Queens, run SolveQueens(True)
+Everything is kicked off from main.py. Please change the function main() at the bottom of the file. You can choose to run any of the functions from main(). All function calls have commented out other than the call to the function that runs the neural network on a PCA reduced dataset that includes cluster labels.
 
 </p>
 <h3>Code Environment</h3>
@@ -30,23 +25,18 @@ This code was developed on a mac, using VSCode, and python 3.7.6. Where file pat
 
 <h3>Code Organization</h3>
 <p>
-The various Solver and Algorithm classes implement all the code required by this assignment. Code for Assignment 1 has been left in.
+The various Solver and Algorithm classes implement all the code required by this assignment. Code for Assignment 1, 2 has been left in.
 
 The files to review are:
-BaseSolver (base class for implementing a solution to one of the problems)
+The main files to review are main.py, BaseLearner.py. KMeansClusterer.py and GMMClusterer.py.
+
 <ul>
-	<li>Queens.py
-	<li>FourPeaks.py
-	<li>Knapsack.py
-	<li>IrisANN.py (does not derive from BaseSolver)
+	<li>main.py
+	<li>BaseLearner.py
+	<li>KMeansClusterer.py
+	<li>GMMClusterer.py
 </ul>
-BaseAlgorithm (base class for implementing an algorithm)
-<ul>
-	<li>SimulatedAnnealing
-	<li>RandomHillClimbing
-	<li>GeneticAlgorithm
-	<li>Mimic
-</ul>
+
 
 Apart from these pieces, there are a number of utility files for ancillary operations like plotting, timing, etc which have little bearing on the main purpose of this project, but help me profile and debug. This project builds on code that I developed during CS-7642 during  Fall '19.
 
